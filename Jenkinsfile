@@ -10,7 +10,8 @@ pipeline {
         NODE_ENV = 'test'
     }
     tools {
-            allure 'allure'
+        allure 'allure'
+    }
 
     stages {
         stage('Checkout') {
@@ -61,4 +62,6 @@ pipeline {
             echo '✅ Cypress tests passed!'
         }
     }
+
 }
+
