@@ -18,12 +18,13 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                sh 'node -v'
-                sh 'npm -v'
-                //sh 'npm ci'
-                sh 'npm install'
-                npx cypress install
-                npx cypress verify
+                sh '''
+                  node -v
+                  npm -v
+                  npm install
+                  npx cypress install
+                  npx cypress verify
+                '''
             }
         }
 
