@@ -45,6 +45,10 @@ pipeline {
 
     post {
         always {
+            allure includeProperties:
+                     false,
+                     jdk: '',
+                     results: [[path: 'allure-results']]
             // Bersihkan workspace setelah build
             cleanWs()
         }
