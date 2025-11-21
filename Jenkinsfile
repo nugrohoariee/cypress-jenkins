@@ -30,7 +30,7 @@ pipeline {
 
         stage('Run Cypress Tests') {
             steps {
-                sh 'npx cypress run --headless --browser chrome'
+                sh 'npx cypress run --headless'
             }
         }
 
