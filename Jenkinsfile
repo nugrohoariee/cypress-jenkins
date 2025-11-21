@@ -33,9 +33,18 @@ pipeline {
         }
 
         stage('Run Cypress Tests') {
+            // steps {
+            //     sh 'npx cypress run --headless'
+            // }
             steps {
-                sh 'npx cypress run --headless'
-            }
+                dir('QA-Cypress') {
+                  sh '''
+                    pwd
+                    ls -la
+                    npx cypress run --headless
+                  '''
+                }
+           }
         }
 
         stage('Archive Artifacts') {
