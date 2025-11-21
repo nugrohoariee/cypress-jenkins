@@ -22,6 +22,8 @@ pipeline {
                 sh 'npm -v'
                 //sh 'npm ci'
                 sh 'npm install'
+                npx cypress install
+                npx cypress verify
             }
         }
 
