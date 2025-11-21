@@ -17,4 +17,4 @@
 import './commands'
 
 //import 'allure-cypress';
-import '@shelex/cypress-allure-plugin';
+//import '@shelex/cypress-allure-plugin';
