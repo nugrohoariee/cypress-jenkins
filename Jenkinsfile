@@ -9,6 +9,8 @@ pipeline {
     environment {
         NODE_ENV = 'test'
     }
+    tools {
+            allure 'allure'
 
     stages {
         stage('Checkout') {
