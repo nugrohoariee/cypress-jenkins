@@ -50,7 +50,7 @@ pipeline {
         always {
             allure includeProperties:
                      false,
-                     jdk: '',
+                     jdk: 'temurin21',
                      results: [[path: 'allure-results']]
             // Bersihkan workspace setelah build
             cleanWs()
