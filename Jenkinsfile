@@ -23,17 +23,39 @@ pipeline {
             }
         }
 
+        // stage('Install Dependencies') {
+        //     steps {
+        //         sh '''
+        //           node -v
+        //           npm -v
+        //           npm install
+        //           npx cypress install
+        //           npx cypress verify
+        //         '''
+        //     }
+        // }
+
         stage('Install Dependencies') {
-            steps {
-                sh '''
-                  node -v
-                  npm -v
-                  npm install
-                  npx cypress install
-                  npx cypress verify
-                '''
+          steps {
+            dir(env.WORKSPACE) {
+              sh '''
+                echo "WORKSPACE=$(pwd)"
+                node -v
+                npm -v
+        
+                npm ci
+        
+                npx cypress install
+                npx cypress verify
+        
+                echo "=== check allure plugin ==="
+                npm ls @shelex/cypress-allure-plugin || true
+                ls -la node_modules/@shelex/cypress-allure-plugin || true
+              '''
             }
+          }
         }
+
 
         stage('Run Cypress Tests') {
             steps {
