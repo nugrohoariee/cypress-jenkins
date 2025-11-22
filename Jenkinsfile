@@ -8,6 +8,8 @@ pipeline {
 
     environment {
         NODE_ENV = 'test'
+        JAVA_HOME = '/opt/java/openjdk'        
+        PATH = "${JAVA_HOME}/bin:${env.PATH}"
     }
     tools {
         allure 'allure'
