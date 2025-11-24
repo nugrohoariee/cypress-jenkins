@@ -65,7 +65,6 @@ pipeline {
 
         stage('Archive Artifacts') {
             steps {
-                // Simpan video/screenshot hasil test (kalau ada)
                 archiveArtifacts artifacts: 'cypress/videos/**, cypress/screenshots/**', allowEmptyArchive: true
             }
         }
@@ -77,7 +76,6 @@ pipeline {
                      false,
                      jdk: 'temurin21',
                      results: [[path: 'allure-results']]
-            // Bersihkan workspace setelah build
             cleanWs()
         }
         failure {
