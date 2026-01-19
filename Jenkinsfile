@@ -13,7 +13,7 @@ pipeline {
         PATH = "${JAVA_HOME}/bin:${env.PATH}"
     }
     tools {
-        nodejs 'nodejs-20'
+        nodejs 'nodejs'
         allure 'allure'
     }
 
