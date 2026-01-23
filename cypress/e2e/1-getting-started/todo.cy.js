@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-
+// test trigger
 // Welcome to Cypress!
 //
 // This spec file contains a variety of sample tests
