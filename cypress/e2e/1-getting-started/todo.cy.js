@@ -137,6 +137,7 @@ describe('example to-do app', () => {
         .should('not.have.text', 'Pay electric bill')
 
       // Finally, make sure that the clear button no longer exists.
+      //COBA CI CD
       cy.contains('Clear completed').should('not.exist')
     })
   })
